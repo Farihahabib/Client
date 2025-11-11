@@ -10,6 +10,10 @@ import Register from "../pages/Register";
 import Contact from "../pages/Contact";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsConditions from "../pages/TermsConditions";
+import AddReview from "../pages/AddReview";
+import MyReview from "../pages/MyReview";
+import Privateroute from "../PrivateRoute/Privateroute";
+import AllReview from "../pages/AllReview";
 
 
 export const router = createBrowserRouter([
@@ -26,21 +30,32 @@ export const router = createBrowserRouter([
                 path:"/about-us",
                 element:<AboutUs />
             },
-            // {
-            //     path:"/profile",
-            //     element: ( <Privateroute>
-            //         <Profile />
-            //         </Privateroute>
-            //     )
-            // },
+            {
+                path:"/profile",
+                element: ( <Privateroute>
+                    <Profile />
+                    </Privateroute>
+                )
+            },
             {
                 path:"/login",
                 element:<Login />
             },
-            // {
-            //     path:"/logout",
-            //     element:<Logout />
-            // },
+            {
+                path:"/AddReview",
+                element:<AddReview />
+            },
+            {
+                path:"/MyReview",
+                element:<MyReview />
+            },
+            {
+                path:"/AllReview",
+                element:<AllReview />,
+                loader:()=>fetch('http://localhost:3100/reviews')
+             
+            },
+           
             {
                 path:"/Register",
                 element:<Register />

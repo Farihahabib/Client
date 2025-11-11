@@ -13,5 +13,8 @@
 }
 .btn:hover{
     background-color: #FF4500 ;
-    border-radius:30px;
+    border-radius:50px;
+}
+.hover:hover{
+    border-bottom: 1px solid white;
 }

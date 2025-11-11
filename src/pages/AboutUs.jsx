@@ -4,7 +4,7 @@ const AboutUs = () => {
     return (
         <>
         <title>About us -Foodlovers Network</title>
-        
+        about us
         </>
     );
 };

@@ -115,8 +115,6 @@ console.log(emailRef.current.value)
    type="email"
     name='email'
     ref={emailRef}
-    //  value={email}
-    // onChange={(e)=>setEmail(e.target.value)}
     className="input bg-teal-50" 
     placeholder="Email" />
 </div>
@@ -128,7 +126,7 @@ console.log(emailRef.current.value)
 <button onClick={handleforgetpassword} type='button' className='hover:underline cursor-pointer'>ForgetPassword?</button>
   <button className="btn btn-neutral bg-teal-800 mt-4">Login</button>
 
-  <button onClick={handlegooglelogin} className="btn btn-neutral bg-teal-600 border-none mt-4"><FaGoogle />Continue With Google</button>
+  <button onClick={handlegooglelogin} className="btn btn-neutral bg-teal-600 border-none mt-4"><div className='flex gap-2 items-center justify-center'><FaGoogle />Continue With Google</div></button>
   <p className='text-white font-bold text-center py-3'>Can't have an account?<NavLink to={'/Register'}><button className='border-b'>...Register Now</button></NavLink> </p>
  
 </form>

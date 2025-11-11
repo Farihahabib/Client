@@ -80,7 +80,7 @@ toast.success(" Successfully Registered with Google")
         <div className='flex  items-center justify-center container mx-auto py-12'>
       
     
-      <form onSubmit={handleregister} className="fieldset shadow-2xl border-base-300 bg-teal-400 rounded-box w-xs border  p-4">
+      <form onSubmit={handleregister} className="fieldset shadow-2xl border-base-300 bg-[#FF7F50] rounded-box w-xs border  p-4">
        
   <h1 className="fieldset-legend pt-5 flex justify-center items-center text-xl text-white font-bold">Register Now</h1>
 
@@ -98,7 +98,7 @@ toast.success(" Successfully Registered with Google")
 </div>
   <button className="btn btn-neutral bg-teal-800 mt-4">Submit</button>
 
-  <button onClick={handlegoogleregister} className="btn btn-neutral bg-teal-600 border-none mt-4"><FaGoogle />Continue With Google</button>
+  <button onClick={handlegoogleregister} className="btn  border-none mt-4 text-white"><div className='flex gap-2 items-center justify-center'><FaGoogle />Continue With Google</div></button>
   <p className='text-white font-bold text-center py-3'>Already have an account? <NavLink to={'/login'}> <button className='border-b'>Login</button></NavLink> </p>
  
 </form>

@@ -26,7 +26,7 @@ const Homepage = () => {
                         pagination={{ clickable: true }}
                         spaceBetween={50}
                         slidesPerView={1}
-                        autoplay={{ delay: 1000 }}
+                        Autoplay={{ delay: 1000 }}
                         loop={true}
                     >
                         {slides.map((slide) => (
