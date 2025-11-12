@@ -8,6 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthProvider';
 import MyLink from './MyLink';
+import { FaHome } from 'react-icons/fa';
+import { FaBowlFood } from 'react-icons/fa6';
+import { MdReviews } from 'react-icons/md';
 
 const Navbar = () => {
     const { user,setUser, logout, loading ,setLoading } =
@@ -36,14 +39,18 @@ console.log(loading);
               <img src={logo} className="w-[60px] rounded-4xl" />
               {/* <h3 className='font-bold  text-white text-xl'>Foodlovers Network</h3> */}
      </figure>
-         <ul className="flex items-center gap-2  mr-3">
+         <ul className="flex items-center gap-4  mr-3">
            <li>
             <MyLink to={"/"}>Home</MyLink>
           </li>
-        <li> <MyLink to={"/AllReview"} >All Review</MyLink></li> 
-        {user &&  (<li>
-            <MyLink to={"/profile"}>Profile</MyLink>
-           </li>)}
+        <li> <MyLink to={"/AllReview"} >All review</MyLink></li> 
+
+              {user && (<li>
+                <MyLink to={"/AddReview"}>Add Review</MyLink>
+              </li>)}
+              {user && (<li>
+                <MyLink to={"/MyReview"}>My Review</MyLink>
+              </li>)}
          </ul>
          {loading ?
          (<DotLoader  />) :
@@ -59,6 +66,7 @@ console.log(loading);
   <div className="p-4 bg-[#FFA07A]  flex flex-col items-center gap-2 m-0">
 <MyLink to={"/AddReview"} className="hover:border-b hover:font-semibold ">Add Review</MyLink>
 <MyLink to={"/MyReview"} className="hover:border-b hover:font-semibold ">My Review</MyLink>
+<MyLink to={"/Favouritereviews"} className="hover:border-b hover:font-semibold ">My Favorites</MyLink>
  <button onClick={handleSignout} 
      className=' btn px-12  text-white'>{loading ? "Logging out..." : "Logout" }</button>
      </div>

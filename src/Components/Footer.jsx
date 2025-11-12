@@ -23,7 +23,7 @@ const Footer = () => {
       <MyLink to={"/PrivacyPolicy"} className="hover">Privacy Policy</MyLink>
   </nav>
   <nav>
-<h1 className='text-white font-bold text-xl my-3'>Connect with us</h1>
+<h1 className='text-white font-semibold text-xl my-3'>Connect with us</h1>
     <div className="grid grid-flow-col gap-4">
 
       <a>

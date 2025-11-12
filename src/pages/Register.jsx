@@ -66,7 +66,7 @@ console.log(res);
 console.log(e)
 setUser(res.user);
 navigate("/");
-toast.success(" Successfully Registered with Google")
+
 })
 .catch((e)=>{
     toast.error(e.message);
@@ -92,9 +92,12 @@ toast.success(" Successfully Registered with Google")
   <label className="label font-bold ">Email</label>
   <input type="email"  name='email'  className="input bg-teal-50 h-7 text-gray-400" placeholder="Email" />
   <div className='relative'>
-  <label className="label font-bold ">Password</label>
+  <label className="label font-bold py-2 ">Password</label>
   <input type={show ? "text" :"password" } name='password'  className="input bg-teal-50 h-7" placeholder="Password" />
-  <span onClick={()=>setshow(!show)} className=' absolute right-2  top-[26px] z-50'>{show ? <FaEye /> : <IoEyeOff />}</span>
+  {/* <label className="label font-bold py-2 ">Confirm Password</label>
+  <input type={show ? "text" :"password" } name='password'  className="input bg-teal-50 h-7" placeholder="Password" /> */}
+  <span onClick={()=>setshow(!show)} className=' absolute right-2  top-[41px] z-50'>{show ? <FaEye /> : <IoEyeOff />}</span>
+ 
 </div>
   <button className="btn btn-neutral bg-teal-800 mt-4">Submit</button>
 
