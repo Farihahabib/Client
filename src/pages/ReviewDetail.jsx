@@ -20,7 +20,8 @@ const ReviewDetail = () => {
                 <p className='font-semibold text-center'><span className='border-b-2 mb-3 text-md'>Reviewer:</span><br></br>{review.reviewer.name}</p>
                 <p className='font-semibold text-center'><span className='border-b-2 mb-3 text-md'>Rating:</span><br></br>{review.reviewer.rating}</p>
                 <p className='font-semibold text-center'><span className='border-b-2 mb-3 text-md'>Review:</span><br></br>{review.reviewer.review}</p>
-                <p className='font-semibold text-center'><span className='border-b-2 mb-3 text-md'>Review:</span><br></br>{review.reveiwer}</p>
+                <p className='font-semibold text-center'><span className='border-b-2 mb-3 text-md'>Review Time:</span><br></br>{review.created_at}</p>
+                <p className='font-semibold text-center'><span className='border-b-2 mb-3 text-md'>Reviewer Email:</span><br></br>{review.created_by}</p>
             </div>
         </div>
         </MyContainer>

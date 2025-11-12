@@ -6,16 +6,16 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useLoaderData } from 'react-router';
+import TopReviewcard from '../Components/TopReviewCard';
 
 const Homepage = () => {
     const slides = [
-        { id: 1, img: "https://media.istockphoto.com/id/1829241109/photo/enjoying-a-brunch-together.jpg?s=612x612&w=0&k=20&c=9awLLRMBLeiYsrXrkgzkoscVU_3RoVwl_HA-OT-srjQ=", content: 'Enjoy cozy brunch moments with family and friends — freshly brewed coffee, pancakes, and laughter!' },
+         {id:1,img:"https://plus.unsplash.com/premium_photo-1694547926001-f2151e4a476b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZCUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",content:'Savor gourmet perfection — fresh ingredients, creative plating, and unforgettable taste.'},
         { id: 2,img:"https://media.gettyimages.com/id/1316145932/photo/table-top-view-of-spicy-food.jpg?s=612x612&w=gi&k=20&c=f-hk_ABcJZiEDNxUfAq-Tqxg0kdE01MbMWkBXhBobl0=" ,content: 'Dive into a burst of spices and colors — the perfect feast for every spice lover' },
         { id: 3,img:"https://t4.ftcdn.net/jpg/02/84/46/89/360_F_284468940_1bg6BwgOfjCnE3W0wkMVMVqddJgtMynE.jpg" ,content: 'Crispy, juicy, and loaded with flavor — taste the ultimate fried chicken experience!'},
-        {id:4,img:"https://plus.unsplash.com/premium_photo-1694547926001-f2151e4a476b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZCUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",content:'Savor gourmet perfection — fresh ingredients, creative plating, and unforgettable taste.'}
+        { id: 4, img: "https://media.istockphoto.com/id/1829241109/photo/enjoying-a-brunch-together.jpg?s=612x612&w=0&k=20&c=9awLLRMBLeiYsrXrkgzkoscVU_3RoVwl_HA-OT-srjQ=", content: 'Enjoy cozy brunch moments with family and friends — freshly brewed coffee, pancakes, and laughter!' },
     ]
-    const data = useLoaderData();
-    console.log(data);
+ const data = useLoaderData();
     return (
         <>
         <div>
@@ -48,6 +48,12 @@ const Homepage = () => {
                         <p className="text-xl mt-4 mx-13">Discover the best food reviews and share your culinary experiences with our vibrant community. Whether you're a foodie, chef, or restaurant owner, FoodLovers Network is your go-to platform for all things food!</p>
                         </div>
                 </div>
+                <div className='container mx-auto'>
+                    <h1 className='text-xl  font-bold   my-9'>Top Reviews</h1>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4  container mb-9">
+{data.map(reviews=> <TopReviewcard key={reviews._id} reviews={reviews} /> )}
+    </div>
+    </div>
             </MyContainer>
         </div>
         </>

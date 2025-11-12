@@ -11,7 +11,7 @@ import Contact from "../pages/Contact";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsConditions from "../pages/TermsConditions";
 import AddReview from "../pages/AddReview";
-import MyReview from "../pages/MyReview";
+import MyReview from "../pages/MyReviews";
 import Privateroute from "../PrivateRoute/Privateroute";
 import AllReview from "../pages/AllReview";
 import ReviewDetails from "../pages/MyFavourite";
@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
             {
                 index:true,
                 element:<Homepage />,
-                loader:()=>fetch('http://localhost:3100/reviews')
+                loader:()=>fetch('http://localhost:3100/top-ratedreviews')
             },
             {
                 path:"/about-us",
@@ -63,10 +63,10 @@ export const router = createBrowserRouter([
             )
             },
             {
-                path:"/MyReview",
+                path:"/MyReviews",
                 element:
                 ( <Privateroute>
-                     <MyReview />
+                     <MyReviews />
                 </Privateroute>
                )
             },

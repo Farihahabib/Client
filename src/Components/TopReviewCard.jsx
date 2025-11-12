@@ -1,12 +1,12 @@
 import React from 'react';
 import MyLink from './MyLink';
 
-const AllReviewcard = ({reviews}) => {
+const TopReviewcard = ({reviews}) => {
     const {_id, photo ,foodName,restaurantName,restaurantLocation,reviewer} = reviews;
     return (
         <>
 <div className='shadow-xl mx-9 transition ease-in-out  hover:scale-104 '>
-    <div className="img h-30  rounded-t-2xl overflow-hidden ">
+    <div className="img h-60  rounded-t-2xl overflow-hidden ">
         <img src={photo} alt="food image" className=' ' />
     </div>
     <div className="text p-4">
@@ -18,16 +18,10 @@ const AllReviewcard = ({reviews}) => {
     </div>
     <div className="btns flex gap-3 mx-auto justify-center mb-2">
      <MyLink to={`/reviewdetails/${_id}`}>  <button className="btn p-1 hover:text-white ">View Details</button></MyLink> 
-<MyLink to={'/Favouritereviews'}><button className="btn btn-square hover:text-white ">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="size-[1.5em] container mx-auto"><path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-</button></MyLink>
+     <MyLink to={'/AllReview'}>  <button className="btn p-1 hover:text-white ">Show All</button></MyLink> 
+
     </div>
 </div>
-        
-        
-        
-        </>
-    );
-};
-
-export default AllReviewcard;
+</>
+    );}
+export default TopReviewcard;
