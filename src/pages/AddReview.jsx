@@ -18,8 +18,12 @@ const AddReview = () => {
           review: e.target.review.value,
         },
         
-       created_at: new Date(),
+       created_at: new Date().toLocaleDateString()
+      //  .toISOString().split('T')[0]
+      //  .toLocaleDateString('en-CA'),
+      ,
        created_by: user?.email,
+
       }
 
       fetch('http://localhost:3100/reviews',{
@@ -31,7 +35,9 @@ const AddReview = () => {
       })
       .then(res=>res.json())
       .then(data=>{
+        toast.success('Review added successfully');
         console.log(data); 
+    
       })
       .catch(err=>{
         console.error(err);

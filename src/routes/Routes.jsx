@@ -11,7 +11,7 @@ import Contact from "../pages/Contact";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsConditions from "../pages/TermsConditions";
 import AddReview from "../pages/AddReview";
-import MyReview from "../pages/MyReviews";
+import MyReviews from "../pages/MyReviews";
 import Privateroute from "../PrivateRoute/Privateroute";
 import AllReview from "../pages/AllReview";
 import ReviewDetails from "../pages/MyFavourite";
