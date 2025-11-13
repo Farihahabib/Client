@@ -9,7 +9,7 @@ const Error = () => {
             <img src={error} alt="errorimage" className=' rounded-3xl' />
            <MyLink to={'/'}><button  className='btn'> Go to Home</button></MyLink> 
         </div>
-        avfs
+        
         
         </>
     );
