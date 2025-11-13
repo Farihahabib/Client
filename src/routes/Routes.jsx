@@ -2,19 +2,19 @@ import { createBrowserRouter } from "react-router";
 import MainLayouts from "../layout/MainLayouts";
 import Homepage from "../pages/Homepage";
 import AboutUs from "../pages/AboutUs";
-import Profile from "../pages/Profile";
+
 
 
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Contact from "../pages/Contact";
+
 import PrivacyPolicy from "../pages/PrivacyPolicy";
-import TermsConditions from "../pages/TermsConditions";
+
 import AddReview from "../pages/AddReview";
 import MyReviews from "../pages/MyReviews";
 import Privateroute from "../PrivateRoute/Privateroute";
 import AllReview from "../pages/AllReview";
-import ReviewDetails from "../pages/MyFavourite";
+import Error from "../pages/Error";
 import ReviewDetail from "../pages/ReviewDetail";
 import MyFavourite from "../pages/MyFavourite";
 import Editreview from "../pages/Editreview";

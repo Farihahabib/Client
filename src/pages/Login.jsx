@@ -28,9 +28,6 @@ console.log(location)
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        
-        console.log("logged in",{email,password})
-  
 signInWithEmailAndPasswordFunc(email,password).then((res)=>{
     console.log(res.user);
     setUser(res.user);

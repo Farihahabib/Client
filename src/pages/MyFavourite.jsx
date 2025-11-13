@@ -10,7 +10,7 @@ const MyFavourite = () => {
     const [reviews, setReviews]=useState([]);
     const [loading, setLoading]=useState(true);
      useEffect(() => {
-        fetch(`http://localhost:3100/my-favourites?email=${user.email}`)
+        fetch(`https://server-alpha-neon.vercel.app/my-favourites?email=${user.email}`)
         .then(res => res.json())
         .then(data => {
           setReviews(data);

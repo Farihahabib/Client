@@ -16,7 +16,7 @@ if(!searchText){
 }
 const timeout = setTimeout(() =>
 {
- fetch(`http://localhost:3100/search?searchText=${searchText}`)
+ fetch(`https://server-alpha-neon.vercel.app/search?searchText=${searchText}`)
     .then((res) => res.json())
     .then((data) => {
       setReview(data);

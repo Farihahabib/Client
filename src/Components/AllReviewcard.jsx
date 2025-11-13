@@ -19,7 +19,7 @@ const review={
      favourites_by:user.email
     };
 
-      fetch('http://localhost:3100/myfavourites',{
+      fetch('https://server-alpha-neon.vercel.app/myfavourites',{
         method:'POST',
         headers:{
           'content-type':'application/json'
