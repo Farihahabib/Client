@@ -3,6 +3,7 @@ import AllReviewcard from '../Components/AllReviewcard';
 import MyContainer from '../Components/MyContainer';
 import { DotLoader } from 'react-spinners';
 import { AuthContext } from '../Context/AuthProvider';
+import MyFavCard from '../Components/MyFavCard';
 
 const MyFavourite = () => {
     const {user} = useContext(AuthContext);
@@ -27,7 +28,7 @@ const MyFavourite = () => {
   {
     reviews.length === 0 ? <h2 className='text-3xl font-semibold text-center col-span-4 my-20'>No Reviews Added By You</h2>
    :
-   reviews.map(reviews =><AllReviewcard  key={reviews._id} reviews={reviews} />) }
+   reviews.map(reviews =><MyFavCard  key={reviews._id} reviews={reviews} />) }
 </div>
 
         
