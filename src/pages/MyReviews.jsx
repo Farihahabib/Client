@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import MyContainer from '../Components/MyContainer';
-import { AuthContext } from '../Context/AuthProvider';
+import { AuthContext } from '../Context/AuthContext';
 import { DotLoader } from 'react-spinners';
 import MyReviewCard from '../Components/MyReviewCard';
 

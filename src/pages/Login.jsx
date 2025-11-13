@@ -7,7 +7,7 @@ import { IoEyeOff } from 'react-icons/io5';
 import { toast } from 'react-toastify';
 import MyContainer from '../Components/MyContainer';
 import {} from '../Firebase/firebase.config';
-import { AuthContext } from '../Context/AuthProvider';
+import { AuthContext } from '../Context/AuthContext';
 
 
 

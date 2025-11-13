@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import MyLink from './MyLink';
 import { DotLoader } from 'react-spinners';
-import { AuthContext } from '../Context/AuthProvider';
+import { AuthContext } from '../Context/AuthContext';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 const AllReviewcard = ({reviews}) => {

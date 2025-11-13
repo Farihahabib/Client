@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../Context/AuthProvider';
+import { AuthContext } from '../Context/AuthContext';
 import { toast } from 'react-toastify';
 
 const AddReview = () => {

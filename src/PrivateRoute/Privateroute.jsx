@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router';
 
 import { DotLoader } from 'react-spinners';
-import { AuthContext } from '../Context/AuthProvider';
+import { AuthContext } from '../Context/AuthContext';
 
 const Privateroute = ({children}) => {
 const {user,loading}=useContext(AuthContext);

@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from 'react-router';
 
 import { toast } from 'react-toastify';
 import { IoEyeOff } from 'react-icons/io5';
-import { AuthContext } from '../Context/AuthProvider';
+import { AuthContext } from '../Context/AuthContext';
 import MyContainer from '../Components/MyContainer';
 
 

@@ -6,7 +6,7 @@ import { NavLink} from 'react-router';
 import { DotLoader} from "react-spinners";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { AuthContext } from '../Context/AuthProvider';
+import { AuthContext } from '../Context/AuthContext';
 import MyLink from './MyLink';
 
 
