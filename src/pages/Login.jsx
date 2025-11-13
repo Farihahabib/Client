@@ -127,16 +127,7 @@ signinwithgooglefunc()
   </div>
 
         <button className="btn btn-neutral bg-teal-800 mt-4">Login</button>
-  <button onClick={handlegooglelogin} className="btn btn-neutral py-3
-  
-  
-  
-  
-  
-  
-  
-  
-  text-center  border-none mt-4"><FaGoogle /><span>Continue With Google</span></button>
+  <button onClick={handlegooglelogin} className="btn btn-neutral py-3 text-center  border-none mt-4"><FaGoogle />Continue With Google</button>
   <p className='text-white font-bold text-center py-3'>Can't have an account?<NavLink to={'/Register'}><button className='border-b'>...Register Now</button></NavLink> </p>
  
 </form>
