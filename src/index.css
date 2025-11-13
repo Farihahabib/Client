@@ -1,8 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 .btn{
-   background-color: #FF4500;
-   color:"white";
+   background-color: #FF4500;;
    border: none;
    border-radius: 5px;
    cursor: pointer;
@@ -17,4 +16,5 @@
 }
 .hover:hover{
     border-bottom: 1px solid white;
+    color:white;
 }

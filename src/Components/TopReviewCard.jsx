@@ -10,7 +10,7 @@ const TopReviewcard = ({reviews}) => {
         <img src={photo} alt="food image" className=' ' />
     </div>
     <div className="text p-4">
-        <h2 className='text-xl font-semibold'> {foodName}</h2>
+        <h2 className='text-xl font-semibold text-[#FF4500] hover:font-bold'> {foodName}</h2>
         <p className='text-md font-semibold'>Restaurant : {restaurantName}</p>
         <p className='text-md font-semibold'> Location : {restaurantLocation}</p>
         <p className='text-md font-semibold'>Reviewer : {reviewer?.name}</p>

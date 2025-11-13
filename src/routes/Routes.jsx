@@ -17,6 +17,7 @@ import AllReview from "../pages/AllReview";
 import ReviewDetails from "../pages/MyFavourite";
 import ReviewDetail from "../pages/ReviewDetail";
 import MyFavourite from "../pages/MyFavourite";
+import Editreview from "../pages/Editreview";
 
 
 export const router = createBrowserRouter([
@@ -69,6 +70,15 @@ export const router = createBrowserRouter([
                      <MyReviews />
                 </Privateroute>
                )
+            },
+            {
+                path:"/editreview/:id",
+                element:
+                ( <Privateroute>
+                     <Editreview />
+                </Privateroute>
+               ),
+               loader:({params})=>fetch(`http://localhost:3100/reviews/${params.id}`)
             },
             {
                 path:"/AllReview",

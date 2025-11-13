@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
-import Reviewcard from '../Components/AllReviewcard';
 import MyContainer from '../Components/MyContainer';
 import AllReviewcard from '../Components/AllReviewcard';
 

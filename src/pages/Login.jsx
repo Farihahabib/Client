@@ -34,10 +34,9 @@ console.log(location)
 signInWithEmailAndPasswordFunc(email,password).then((res)=>{
     console.log(res.user);
     setUser(res.user);
-    setLoading(false);
     toast.success(" Successfully Logged In")
     navigate(from);
-    setLoading(false);
+  
 }).catch((e)=>{
 if(e.code === "auth/email-already-in-use")
     {
