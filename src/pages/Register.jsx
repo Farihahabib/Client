@@ -94,6 +94,8 @@ navigate("/");
   <div className='relative'>
   <label className="label font-bold py-2 ">Password</label>
   <input type={show ? "text" :"password" } name='password'  className="input bg-teal-50 h-7" placeholder="Password" />
+  <label className="label font-bold py-2 ">Confirm Password</label>
+  <input type={show ? "text" :"password" } name='password'  className="input bg-teal-50 h-7" placeholder="Password" />
   {/* <label className="label font-bold py-2 ">Confirm Password</label>
   <input type={show ? "text" :"password" } name='password'  className="input bg-teal-50 h-7" placeholder="Password" /> */}
   <span onClick={()=>setshow(!show)} className=' absolute right-2  top-[41px] z-50'>{show ? <FaEye /> : <IoEyeOff />}</span>
