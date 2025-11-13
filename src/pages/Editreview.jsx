@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthContext } from '../Context/AuthProvider';
+import { AuthContext } from '../Context/AuthContext';
 import { useLoaderData, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 const Editreview = () => {

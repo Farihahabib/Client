@@ -18,6 +18,8 @@ import ReviewDetails from "../pages/MyFavourite";
 import ReviewDetail from "../pages/ReviewDetail";
 import MyFavourite from "../pages/MyFavourite";
 import Editreview from "../pages/Editreview";
+import ContactUs from "../pages/Contact";
+import TermsAndConditions from "../pages/TermsConditions";
 
 
 export const router = createBrowserRouter([
@@ -93,7 +95,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:"/contact",
-                element:<Contact />
+                element:<ContactUs />
             },
             {
                 path:"/PrivacyPolicy",
@@ -101,7 +103,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:"/Terms_Conditions",
-                element:<TermsConditions />
+                element:<TermsAndConditions />
             },
         
          

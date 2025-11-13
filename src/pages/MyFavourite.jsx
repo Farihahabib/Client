@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AllReviewcard from '../Components/AllReviewcard';
 import MyContainer from '../Components/MyContainer';
 import { DotLoader } from 'react-spinners';
-import { AuthContext } from '../Context/AuthProvider';
+import { AuthContext } from '../Context/AuthContext';
 import MyFavCard from '../Components/MyFavCard';
 
 const MyFavourite = () => {

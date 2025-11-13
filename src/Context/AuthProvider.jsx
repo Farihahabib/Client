@@ -4,6 +4,7 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider,  onAuthStateChanged,  sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { auth } from '../Firebase/firebase.config.js';
+import { AuthContext } from './AuthContext.jsx';
 
 const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
@@ -60,10 +61,7 @@ return()=>{
 }
 },[])
 
-
-
-
-    return <AuthContext value={authInfo}>{children}</AuthContext>
+ return <AuthContext value={authInfo}>{children}</AuthContext>
        
 
 };
