@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
             {
                 index:true,
                 element:<Homepage />,
-                loader:()=>fetch('http://localhost:3100/top-ratedreviews')
+                loader:()=>fetch('https://server-alpha-neon.vercel.app/top-ratedreviews')
             },
             {
                 path:"/about-us",
@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
             <ReviewDetail />
             </Privateroute>
             ),
-            loader:({params})=>fetch(`http://localhost:3100/reviews/${params.id}`)
+            loader:({params})=>fetch(`https://server-alpha-neon.vercel.app/reviews/${params.id}`)
            },
             {
                 path:"/login",
@@ -80,12 +80,12 @@ export const router = createBrowserRouter([
                      <Editreview />
                 </Privateroute>
                ),
-               loader:({params})=>fetch(`http://localhost:3100/reviews/${params.id}`)
+               loader:({params})=>fetch(`https://server-alpha-neon.vercel.app/reviews/${params.id}`)
             },
             {
                 path:"/AllReview",
                 element:<AllReview />,
-                loader:()=>fetch('http://localhost:3100/reviews')
+                loader:()=>fetch('https://server-alpha-neon.vercel.app/reviews')
              
             },
            

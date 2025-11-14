@@ -64,6 +64,7 @@ if(e.code === "auth/email-already-in-use")
 signinwithgooglefunc().then((res)=>{
 console.log(res);
 console.log(e)
+setLoading(false);
 setUser(res.user);
 navigate("/");
 
@@ -75,7 +76,7 @@ navigate("/");
     
     return (
         <>
-            <title>ToyTopia - Registration</title>
+            <title>FoodloversNetwork - Registration</title>
                 <MyContainer>
         <div className='flex  items-center justify-center container mx-auto py-12'>
       
@@ -94,10 +95,7 @@ navigate("/");
   <div className='relative'>
   <label className="label font-bold py-2 ">Password</label>
   <input type={show ? "text" :"password" } name='password'  className="input bg-teal-50 h-7" placeholder="Password" />
-  <label className="label font-bold py-2 ">Confirm Password</label>
-  <input type={show ? "text" :"password" } name='password'  className="input bg-teal-50 h-7" placeholder="Confirm Password" />
-  {/* <label className="label font-bold py-2 ">Confirm Password</label>
-  <input type={show ? "text" :"password" } name='password'  className="input bg-teal-50 h-7" placeholder="Password" /> */}
+ 
   <span onClick={()=>setshow(!show)} className=' absolute right-2  top-[41px] z-50'>{show ? <FaEye /> : <IoEyeOff />}</span>
  
 </div>
