@@ -34,7 +34,6 @@ signInWithEmailAndPasswordFunc(email,password).then((res)=>{
     setLoading(false);
     toast.success(" Successfully Logged In")
     navigate(from);
-    setLoading(false);
 }).catch((e)=>{
 if(e.code === "auth/email-already-in-use")
     {
@@ -52,7 +51,7 @@ if(e.code === "auth/email-already-in-use")
         toast.error(e.message);
     }
 
-setLoading(false);
+
 }
 )
  
