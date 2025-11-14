@@ -11,7 +11,7 @@ const Footer = () => {
        <footer className="footer footer-horizontal footer-center bg-[#FF7F50] text-base-content rounded p-10">
  <figure>
     <img src={logo} alt="" className='w-[89px] rounded-3xl' />
-    <h1 className='text-white font-semibold'>Foodlovers Network</h1>
+    <h1 className='text-white font-semibold'> Local Foodlovers Network</h1>
  </figure>
  
  <div>
@@ -42,7 +42,7 @@ const Footer = () => {
   </nav>
   </div>
   <aside>
-    <p className='text-white'>Copyright © {new Date().getFullYear()} - All right reserved by FoodLovers Network</p>
+    <p className='text-white'>Copyright © {new Date().getFullYear()} - All right reserved by Local FoodLovers Network</p>
   </aside>
 </footer>
    </MyContainer>
