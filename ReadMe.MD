@@ -13,7 +13,7 @@ The project focuses on UI/UX, responsiveness, and smooth navigation using modern
 ---
 
 ## 🖼️ Screenshot
-![FoodLovers Network Home](https://raw.githubusercontent.com/Farihahabib/Images/main/foodlovers-network.png)
+![FoodLovers Network Home](https://github.com/Farihahabib/Images/blob/main/Screenshot%202026-01-01%20185446.png)
 
 ---
 
