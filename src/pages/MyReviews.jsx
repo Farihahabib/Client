@@ -9,7 +9,7 @@ const MyReviews = () => {
   const [reviews, setReviews]=useState([]);
   const [loading, setLoading]=useState(true);
   useEffect(() => {
-    fetch(`https://server-alpha-neon.vercel.app/myreviews?email=${user.email}`)
+    fetch(`http://localhost:3000/myreviews?email=${user.email}`)
     .then(res => res.json())
     .then(data => {
       setReviews(data);

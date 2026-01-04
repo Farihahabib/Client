@@ -5,8 +5,10 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { useLoaderData } from 'react-router';
 import TopReviewcard from '../Components/TopReviewCard';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+
 
 const Homepage = () => {
     const slides = [
@@ -16,7 +18,17 @@ const Homepage = () => {
         { id: 4, img: "https://img.freepik.com/free-photo/rice-noodles-bowl-curry-paste-with-chili-cucumber-long-bean-lime-garlic-spring-onion_1150-27078.jpg?semt=ais_hybrid&w=740&q=80", content: 'Bold curry paste, fresh lime & crisp veggies — this noodle bowl hits all the flavour notes' },
         { id: 5, img: "https://upload.wikimedia.org/wikipedia/commons/3/3b/%E0%A6%87%E0%A6%B2%E0%A6%BF%E0%A6%B6_%E0%A6%AE%E0%A6%BE%E0%A6%9B_%E0%A6%AD%E0%A6%BE%E0%A6%9C%E0%A6%BE_%E0%A6%93_%E0%A6%AD%E0%A6%BE%E0%A6%A4.jpg", content: 'Crispy fried hilsa served with warm steamed rice — a true taste of Bengal.'}
     ]
- const data = useLoaderData();
+//  const data = useLoaderData();
+  const { data: reviews = [], isLoading } = useQuery({
+    queryKey: ["top-reviews"],
+    queryFn: async () => {
+      const res = await axios.get(
+        "https://server-alpha-neon.vercel.app/top-ratedreviews"
+      );
+      return res.data.reviews;
+    },
+  })
+  console.log(reviews)
     return (
         <>
         <div>
@@ -24,7 +36,18 @@ const Homepage = () => {
 
             <MyContainer>
                 <div className="slider w-80% mx-auto ">
-                    <Swiper
+                        <Swiper
+      slidesPerView={1}   
+      loop={true}         
+      speed={1400} 
+      autoplay={{
+        delay: 4000,     
+        disableOnInteraction: false,
+      }}
+      modules={[Autoplay]}
+      className="w-full h-[300px]"
+    >
+                    {/* <Swiper
                         modules={[Navigation, Pagination]}
                         navigation
                         pagination={{ clickable: true }}
@@ -32,7 +55,7 @@ const Homepage = () => {
                         slidesPerView={1}
                         Autoplay={{ delay: 1000 }}
                         loop={true}
-                    >
+                    > */}
                         {slides.map((slide) => (
                             <SwiperSlide key={slide.id}>
                                 <div className="slide-content">
@@ -51,8 +74,8 @@ const Homepage = () => {
                 </div>
                 <div className='container mx-auto'>
                     <h1 className='text-xl  font-bold text-center  my-9'>Top Reviews</h1>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4  container mb-9">
-{data.map(reviews=> <TopReviewcard key={reviews._id} reviews={reviews} /> )}
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-5  container mb-9">
+{reviews.map(reviews=> <TopReviewcard  reviews={reviews} /> )}
     </div>
     </div>
             </MyContainer>

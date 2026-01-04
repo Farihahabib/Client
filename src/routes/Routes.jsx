@@ -20,6 +20,10 @@ import MyFavourite from "../pages/MyFavourite";
 import Editreview from "../pages/Editreview";
 import ContactUs from "../pages/Contact";
 import TermsAndConditions from "../pages/TermsConditions";
+import DashboardLayout from "../layout/DashboardLayout";
+import Profile from "../pages/Profile";
+
+
 
 
 export const router = createBrowserRouter([
@@ -32,31 +36,20 @@ export const router = createBrowserRouter([
             {
                 index:true,
                 element:<Homepage />,
-                loader:()=>fetch('https://server-alpha-neon.vercel.app/top-ratedreviews')
+              
             },
             {
                 path:"/about-us",
                 element:<AboutUs />
             },
-           {
-            path:"/Favouritereviews",
-            element:(<Privateroute>
-            <MyFavourite />
-            </Privateroute>
-            )
-           },
+   
            {
             path:"/reviewdetails/:id",
-            element:(<Privateroute>
-            <ReviewDetail />
-            </Privateroute>
-            ),
+            element:
+            <ReviewDetail />,
             loader:({params})=>fetch(`https://server-alpha-neon.vercel.app/reviews/${params.id}`)
            },
-            {
-                path:"/login",
-                element:<Login />
-            },
+          
             {
                 path:"/AddReview",
                 element:(<Privateroute>
@@ -65,34 +58,15 @@ export const router = createBrowserRouter([
                
             )
             },
-            {
-                path:"/MyReviews",
-                element:
-                ( <Privateroute>
-                     <MyReviews />
-                </Privateroute>
-               )
-            },
-            {
-                path:"/editreview/:id",
-                element:
-                ( <Privateroute>
-                     <Editreview />
-                </Privateroute>
-               ),
-               loader:({params})=>fetch(`https://server-alpha-neon.vercel.app/reviews/${params.id}`)
-            },
+         
+          
             {
                 path:"/AllReview",
-                element:<AllReview />,
-                loader:()=>fetch('https://server-alpha-neon.vercel.app/reviews')
-             
+                element:<AllReview />,     // loader:()=>fetch('http://localhost:3000/reviews')
+           
             },
            
-            {
-                path:"/Register",
-                element:<Register />
-            },
+        
             {
                 path:"/contact",
                 element:<ContactUs />
@@ -105,8 +79,146 @@ export const router = createBrowserRouter([
                 path:"/Terms_Conditions",
                 element:<TermsAndConditions />
             },
+               {
+                path:"/AddReview",
+                element:(<Privateroute>
+                     <AddReview />
+                </Privateroute>
+               
+            )
+            },
+              {
+                path:"/editreview/:id",
+                element:
+                ( <Privateroute>
+                     <Editreview />
+                </Privateroute>
+               ),
+               loader:({params})=>fetch(`https://server-alpha-neon.vercel.app/reviews/${params.id}`)
+            },
+               {
+                path:"/MyReviews",
+                element:
+                ( <Privateroute>
+                     <MyReviews />
+                </Privateroute>
+               )
+            },
+                    {
+            path:"/Favouritereviews",
+            element:(<Privateroute>
+            <MyFavourite />
+            </Privateroute>
+            )
+           },
         
          
         ]
     }
+    ,
+      {  path:"/login", element:<Login /> },
+     { path:"/Register",element:<Register />},
+           {
+    path: '/dashboard',
+    element: (
+      <Privateroute>
+        <DashboardLayout />
+      </Privateroute>
+    ),
+    children: [
+       {
+        path: 'profile',
+        element: (
+          <Privateroute>
+            <Profile />
+          </Privateroute>
+        ),
+      },
+   
+    //   {
+    //     path: 'manage-scholarship',
+    //     element: (
+    //       <PrivateRoute>
+    //         <AdminRoute>  
+    //            <ManageScholarships />
+    //            </AdminRoute>
+         
+    //       </PrivateRoute>
+    //     ),
+    //   },
+//             {
+//   path: 'updatescholarship/:id',
+//   element: (
+//     <Privateroute>
+//       <AdminRoute>
+//          <UpdateScholarship />
+//          </AdminRoute>
+  
+//     </Privateroute>
+//   ),
+// },
+
+    //   {
+    //     path: 'manage-users',
+    //     element: (
+    //       <PrivateRoute>
+    //         <AdminRoute>
+    //            <ManageUsers />
+    //            </AdminRoute>
+           
+    //       </PrivateRoute>
+    //     ),
+    //   },
+    //   {
+    //     path: 'analytics',
+    //     element: (
+    //       <PrivateRoute>
+    //         <AdminRoute> 
+    //            <Analytics />
+    //         </AdminRoute>
+          
+    //       </PrivateRoute>
+    //     ),
+    //   },
+  
+    //   {
+    //     path: 'my-applications',
+    //     element: (
+    //       <PrivateRoute>
+    //         <MyApplications />
+    //       </PrivateRoute>
+    //     ),
+    //   },
+    //   {
+    //     path: 'manage-applications',
+    //     element: (
+    //     <PrivateRoute>
+    //       <ModeratorRoute>
+    //         <ManageApplys />
+    //         </ModeratorRoute>
+    //     </PrivateRoute>
+    //     ),
+    //   },
+    //   {
+    //     path: 'all-reviews',
+    //     element:  (  <PrivateRoute>
+    //       <ModeratorRoute>
+    //         <AllReviews />
+    //         </ModeratorRoute>
+    //     </PrivateRoute>
+    //     ),
+    //   },
+    //   {
+    //     path: 'my-reviews',
+    //     element:(
+    //     <PrivateRoute> 
+    //       <MyReviews />
+    //       </PrivateRoute>
+    //    )
+    //     ,
+    //   },
+
+  
+    ],
+  },
 ])

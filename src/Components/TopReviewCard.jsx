@@ -2,11 +2,12 @@ import React from 'react';
 import MyLink from './MyLink';
 
 const TopReviewcard = ({reviews}) => {
+    console.log(reviews)
     const {_id, photo ,foodName,restaurantName,restaurantLocation,reviewer} = reviews;
     return (
         <>
-<div className='shadow-xl mx-9 transition ease-in-out  hover:scale-104 '>
-    <div className="img h-60  rounded-t-2xl overflow-hidden ">
+<div className='shadow-xl  transition ease-in-out  hover:scale-104 space-x-0 '>
+    <div className="img h-40  rounded-t-2xl overflow-hidden ">
         <img src={photo} alt="food image" className=' ' />
     </div>
     <div className="text p-4">

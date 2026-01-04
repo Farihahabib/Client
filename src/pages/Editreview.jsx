@@ -21,7 +21,7 @@ const Editreview = () => {
     
           }
     
-          fetch(`https://server-alpha-neon.vercel.app/reviews/${review._id}`,{
+          fetch(`http://localhost:3000/reviews/${review._id}`,{
             method:'PUT',
             headers:{
               'content-type':'application/json'

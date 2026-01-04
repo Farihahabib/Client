@@ -5,7 +5,7 @@ import MyLink from './MyLink';
 const MyReviewCard = ({reviews}) => {
         const {_id, photo ,foodName,restaurantName,restaurantLocation,reviewer,created_at,created_by} = reviews;
        const handledeletebtn = ()=>{
-        fetch(`https://server-alpha-neon.vercel.app/reviews/${_id}`,{
+        fetch(`http://localhost:3000/reviews/${_id}`,{
             method:'DELETE',
             headers:{
                 'content-type':'application/json',

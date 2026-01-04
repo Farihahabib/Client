@@ -27,7 +27,7 @@ const AddReview = () => {
 
       }
 
-      fetch('https://server-alpha-neon.vercel.app/reviews',{
+      fetch('http://localhost:3000/reviews',{
         method:'POST',
         headers:{
           'content-type':'application/json'
