@@ -2,7 +2,7 @@
 
 // export const AuthContext = createContext();
 import { createUserWithEmailAndPassword, GoogleAuthProvider,  onAuthStateChanged,  sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'preact/hooks';
 import { auth } from '../Firebase/firebase.config.js';
 import { AuthContext } from './AuthContext.jsx';
 
@@ -61,7 +61,7 @@ return()=>{
 }
 },[])
 
- return <AuthContext value={authInfo}>{children}</AuthContext>
+ return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
        
 
 };

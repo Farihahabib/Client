@@ -1,10 +1,11 @@
 import React from 'react';
 
-const MyContainer = ({className , children}) => {
-    return <div className={` container mx-auto   ${className || ""} `}>
-            {children}
-        </div>
-    
+const MyContainer = ({ children, className = "" }) => {
+  return (
+    <div className={`max-w-screen-2xl mx-auto px-4 ${className}`}>
+      {children}
+    </div>
+  );
 };
 
 export default MyContainer;

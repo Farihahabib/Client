@@ -1,27 +1,32 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import MainLayouts from "../layout/MainLayouts";
 import Homepage from "../pages/Homepage";
 import AboutUs from "../pages/AboutUs";
-
-
-
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-
 import PrivacyPolicy from "../pages/PrivacyPolicy";
-
 import AddReview from "../pages/AddReview";
 import MyReviews from "../pages/MyReviews";
 import Privateroute from "../PrivateRoute/Privateroute";
+import AdminRoute from "../PrivateRoute/AdminRoute";
+import ModeratorRoute from "../PrivateRoute/ModeratorRoute";
 import AllReview from "../pages/AllReview";
 import Error from "../pages/Error";
 import ReviewDetail from "../pages/ReviewDetail";
+import FavoriteDetail from "../pages/FavoriteDetail";
 import MyFavourite from "../pages/MyFavourite";
 import Editreview from "../pages/Editreview";
 import ContactUs from "../pages/Contact";
 import TermsAndConditions from "../pages/TermsConditions";
 import DashboardLayout from "../layout/DashboardLayout";
 import Profile from "../pages/Profile";
+
+// Dashboard Pages
+import UserDashboard from "../pages/Dashboard/User/UserDashboard";
+import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
+import Analytics from "../pages/Dashboard/Admin/Analytics";
+import AllReviews from "../pages/Dashboard/Moderator/AllReviews";
+import ApplyBusiness from "../pages/ApplyBusiness";
 
 
 
@@ -47,7 +52,15 @@ export const router = createBrowserRouter([
             path:"/reviewdetails/:id",
             element:
             <ReviewDetail />,
-            loader:({params})=>fetch(`https://server-alpha-neon.vercel.app/reviews/${params.id}`)
+            loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/reviews/${params.id}`)
+           },
+           {
+            path:"/favoritedetails/:id",
+            element: (
+              <Privateroute>
+                <FavoriteDetail />
+              </Privateroute>
+            )
            },
           
             {
@@ -79,6 +92,14 @@ export const router = createBrowserRouter([
                 path:"/Terms_Conditions",
                 element:<TermsAndConditions />
             },
+            {
+                path:"/apply-business",
+                element:(
+                    <Privateroute>
+                        <ApplyBusiness />
+                    </Privateroute>
+                )
+            },
                {
                 path:"/AddReview",
                 element:(<Privateroute>
@@ -94,7 +115,7 @@ export const router = createBrowserRouter([
                      <Editreview />
                 </Privateroute>
                ),
-               loader:({params})=>fetch(`https://server-alpha-neon.vercel.app/reviews/${params.id}`)
+               loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/reviews/${params.id}`)
             },
                {
                 path:"/MyReviews",
@@ -104,13 +125,18 @@ export const router = createBrowserRouter([
                 </Privateroute>
                )
             },
-                    {
-            path:"/Favouritereviews",
-            element:(<Privateroute>
-            <MyFavourite />
-            </Privateroute>
-            )
-           },
+            {
+                path:"/MyFavourite",
+                element:(
+                    <Privateroute>
+                        <MyFavourite />
+                    </Privateroute>
+                )
+            },
+            {
+                path:"/Favouritereviews",
+                element: <Navigate to="/MyFavourite" replace />
+            },
         
          
         ]
@@ -126,7 +152,15 @@ export const router = createBrowserRouter([
       </Privateroute>
     ),
     children: [
-       {
+      {
+        index: true,
+        element: (
+          <Privateroute>
+            <UserDashboard />
+          </Privateroute>
+        ),
+      },
+      {
         path: 'profile',
         element: (
           <Privateroute>
@@ -134,91 +168,38 @@ export const router = createBrowserRouter([
           </Privateroute>
         ),
       },
-   
-    //   {
-    //     path: 'manage-scholarship',
-    //     element: (
-    //       <PrivateRoute>
-    //         <AdminRoute>  
-    //            <ManageScholarships />
-    //            </AdminRoute>
-         
-    //       </PrivateRoute>
-    //     ),
-    //   },
-//             {
-//   path: 'updatescholarship/:id',
-//   element: (
-//     <Privateroute>
-//       <AdminRoute>
-//          <UpdateScholarship />
-//          </AdminRoute>
-  
-//     </Privateroute>
-//   ),
-// },
-
-    //   {
-    //     path: 'manage-users',
-    //     element: (
-    //       <PrivateRoute>
-    //         <AdminRoute>
-    //            <ManageUsers />
-    //            </AdminRoute>
-           
-    //       </PrivateRoute>
-    //     ),
-    //   },
-    //   {
-    //     path: 'analytics',
-    //     element: (
-    //       <PrivateRoute>
-    //         <AdminRoute> 
-    //            <Analytics />
-    //         </AdminRoute>
-          
-    //       </PrivateRoute>
-    //     ),
-    //   },
-  
-    //   {
-    //     path: 'my-applications',
-    //     element: (
-    //       <PrivateRoute>
-    //         <MyApplications />
-    //       </PrivateRoute>
-    //     ),
-    //   },
-    //   {
-    //     path: 'manage-applications',
-    //     element: (
-    //     <PrivateRoute>
-    //       <ModeratorRoute>
-    //         <ManageApplys />
-    //         </ModeratorRoute>
-    //     </PrivateRoute>
-    //     ),
-    //   },
-    //   {
-    //     path: 'all-reviews',
-    //     element:  (  <PrivateRoute>
-    //       <ModeratorRoute>
-    //         <AllReviews />
-    //         </ModeratorRoute>
-    //     </PrivateRoute>
-    //     ),
-    //   },
-    //   {
-    //     path: 'my-reviews',
-    //     element:(
-    //     <PrivateRoute> 
-    //       <MyReviews />
-    //       </PrivateRoute>
-    //    )
-    //     ,
-    //   },
-
-  
+      // Admin Routes
+      {
+        path: 'manage-users',
+        element: (
+          <Privateroute>
+            <AdminRoute>
+              <ManageUsers />
+            </AdminRoute>
+          </Privateroute>
+        ),
+      },
+      {
+        path: 'analytics',
+        element: (
+          <Privateroute>
+            <AdminRoute>
+              <Analytics />
+            </AdminRoute>
+          </Privateroute>
+        ),
+      },
+      // Moderator Routes
+      {
+        path: 'manage-all-reviews',
+        element: (
+          <Privateroute>
+            <ModeratorRoute>
+              <AllReviews />
+            </ModeratorRoute>
+          </Privateroute>
+        ),
+      },
     ],
   },
 ])

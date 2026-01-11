@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect } from 'preact/hooks'
 import { useNavigate } from 'react-router'
 import axios from 'axios'
 import useAuth from './useAuth'
@@ -9,16 +9,24 @@ const axiosInstance = axios.create({
 })
 
 const useAxiosSecure = () => {
-  const { user, logOut, loading } = useAuth()
+  const { user, logout, loading } = useAuth()
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!loading && user?.accessToken) {
+    if (!loading && user) {
       // Add request interceptor
       const requestInterceptor = axiosInstance.interceptors.request.use(
-        config => {
-          config.headers.Authorization = `Bearer ${user.accessToken}`
-          return config
+        async (config) => {
+          // Get the current Firebase ID token
+          if (user) {
+            try {
+              const token = await user.getIdToken();
+              config.headers.Authorization = `Bearer ${token}`;
+            } catch (error) {
+              console.error('Error getting ID token:', error);
+            }
+          }
+          return config;
         }
       )
 
@@ -27,7 +35,7 @@ const useAxiosSecure = () => {
         res => res,
         err => {
           if (err?.response?.status === 401 || err?.response?.status === 403) {
-            logOut()
+            logout()
               .then(() => {
                 console.log('Logged out successfully.')
               })
@@ -44,7 +52,7 @@ const useAxiosSecure = () => {
         axiosInstance.interceptors.response.eject(responseInterceptor)
       }
     }
-  }, [user, loading, logOut, navigate])
+  }, [user, loading, logout, navigate])
 
   return axiosInstance
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import MyContainer from '../Components/MyContainer';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules"; 
@@ -34,50 +34,49 @@ const Homepage = () => {
         <div>
             <title>FoodLovers Network -Home</title>
 
-            <MyContainer>
-                <div className="slider w-80% mx-auto ">
-                        <Swiper
-      slidesPerView={1}   
-      loop={true}         
-      speed={1400} 
-      autoplay={{
-        delay: 4000,     
-        disableOnInteraction: false,
-      }}
-      modules={[Autoplay]}
-      className="w-full h-[300px]"
-    >
-                    {/* <Swiper
-                        modules={[Navigation, Pagination]}
-                        navigation
-                        pagination={{ clickable: true }}
-                        spaceBetween={50}
-                        slidesPerView={1}
-                        Autoplay={{ delay: 1000 }}
-                        loop={true}
-                    > */}
-                        {slides.map((slide) => (
-                            <SwiperSlide key={slide.id}>
-                                <div className="slide-content">
-                                    <img src={slide.img} alt={`Slide ${slide.id}`} className="w-full h-96 object-cover rounded-lg" />
-                                    <div className="slide-text absolute bottom-5 left-5  bg-opacity-50 text-white p-3 font-semibold">
-                                        {slide.content}
-                                    </div>
+            {/* Banner Section - Full Width */}
+            <div className="slider w-full">
+                <Swiper
+                    slidesPerView={1}   
+                    loop={true}         
+                    speed={1400} 
+                    autoplay={{
+                        delay: 4000,     
+                        disableOnInteraction: false,
+                    }}
+                    modules={[Autoplay]}
+                    className="w-full h-[400px]"
+                >
+                    {slides.map((slide) => (
+                        <SwiperSlide key={slide.id}>
+                            <div className="slide-content relative">
+                                <img src={slide.img} alt={`Slide ${slide.id}`} className="w-full h-[400px] object-cover" />
+                                <div className="slide-text absolute bottom-6 left-6 bg-black bg-opacity-60 text-white p-4 rounded-lg font-semibold text-base max-w-sm">
+                                    {slide.content}
                                 </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                     <div className="text-center my-6 text-6xl font-semibold">
-                        <h1 className='text-[#FF4500]'>Welcome Foodies!</h1>
-                        <p className="text-xl mt-4 mx-13">Discover the best food reviews and share your culinary experiences with our vibrant community. Whether you're a foodie, chef, or restaurant owner, FoodLovers Network is your go-to platform for all things food!</p>
-                        </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+
+            {/* Welcome Section */}
+            <MyContainer>
+                <div className="text-center my-10 px-4">
+                    <h1 className='text-4xl md:text-6xl font-semibold text-[#FF4500] mb-6'>Welcome Foodies!</h1>
+                    <p className="text-lg md:text-xl mt-4 max-w-4xl mx-auto leading-relaxed">
+                        Discover the best food reviews and share your culinary experiences with our vibrant community. 
+                        Whether you're a foodie, chef, or restaurant owner, FoodLovers Network is your go-to platform for all things food!
+                    </p>
                 </div>
+
+                {/* Top Reviews Section */}
                 <div className='container mx-auto'>
-                    <h1 className='text-xl  font-bold text-center  my-9'>Top Reviews</h1>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-5  container mb-9">
-{reviews.map(reviews=> <TopReviewcard  reviews={reviews} /> )}
-    </div>
-    </div>
+                    <h1 className='text-2xl md:text-3xl font-bold text-center my-12'>Top Reviews</h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mb-12">
+                        {reviews.map(reviews=> <TopReviewcard key={reviews._id} reviews={reviews} />)}
+                    </div>
+                </div>
             </MyContainer>
         </div>
         </>
