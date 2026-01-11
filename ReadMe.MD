@@ -1,51 +1,68 @@
-# Local Food Lovers Network
+# 🍔 FoodLovers Network
 
-A community-driven platform that connects food enthusiasts with the best local eateries, homemade food sellers, and authentic culinary experiences.
-
-## 🌐 Live Site URL
-
-[https://foodlovers-network1.netlify.app/]
-
----
-
-## ⭐ Features
-
-* 🍲 **Discover Local Delights** – Browse a curated list of food spots and homemade dishes offered by locals.
-* 📝 **User Reviews & Ratings** – Share your honest feedback and explore ratings from other food lovers.
-* 🔍 **Advanced Search** – Find dishes using search field.
-* 👤 **Personalized Profiles** – Create your profile, manage your reviews, and save favorite .
-* 👤 **Add your reviews** –  manage your reviews and edit it if needs .
-* 👤 **Delete your reviews** –  You can also delete your reviews if needed.
+## 📌 Project Overview
+FoodLovers Network is a responsive food discovery website where users can explore different food items through a clean and modern user interface.  
+Users can also share their food experiences and submit reviews, creating an interactive, community-driven platform.  
+The project focuses on UI/UX, responsiveness, and smooth navigation using modern frontend technologies.
 
 ---
 
-## 📦 Tech Stack
-
-* **Frontend:** React, Tailwind CSS
-* **Backend:** Node.js, Express.js
-* **Database:** MongoDB
+## 🌐 Live Project
+👉 https://foodlovers-network1.netlify.app
 
 ---
 
-## 🚀 Getting Started
+## 🖼️ Screenshot
+![FoodLovers Network Home](https://github.com/Farihahabib/Images/blob/main/Screenshot%202026-01-01%20185446.png)
 
-1. Clone the repository
+---
+
+## 🛠️ Technologies Used
+- React.js
+- JavaScript (ES6)
+- HTML5
+- CSS3
+- Tailwind CSS
+- Netlify
+- Git & GitHub
+
+---
+
+## ✨ Core Features
+- Fully responsive design (mobile, tablet, desktop)  
+- Clean and modern UI  
+- Smooth navigation and layout  
+- Users can share food experiences and add/edit/delete reviews  
+- Reusable React components  
+- Fast loading performance  
+
+---
+
+## 📦 Dependencies
+- react  
+- react-dom  
+- react-router-dom  
+- tailwindcss  
+
+---
+
+## ▶️ How to Run the Project Locally
+
+Follow the steps below to run this project on your local machine:
 
 ```bash
-git clone https://github.com/Farihahabib/Client.git
-```
+# Step 1: Clone the repository
+git clone https://github.com/Farihahabib/foodlovers-network.git
 
-2. Install dependencies
+# Step 2: Navigate to the project folder
+cd foodlovers-network
 
-```bash
+# Step 3: Install dependencies
 npm install
-```
 
-3. Start the development server
-
-```bash
+# Step 4: Start the development server
 npm run dev
-```
+
 
 ---
 
