@@ -5,7 +5,7 @@ import { RouterProvider } from 'react-router/dom'
 import { router } from './routes/Routes.jsx'
 import { ToastContainer } from 'react-toastify'
 import AuthProvider from './Context/AuthProvider.jsx'
-import { ThemeProvider } from './components/theme-provider.jsx'
+import { ThemeProvider } from './Components/theme-provider.jsx'
 import {
   QueryClient,
   QueryClientProvider,
