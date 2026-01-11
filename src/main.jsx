@@ -1,7 +1,7 @@
 
 import { render } from 'preact'
 import './index.css'
-import { RouterProvider } from 'react-router/dom'
+import { RouterProvider } from 'react-router'
 import { router } from './routes/Routes.jsx'
 import { ToastContainer } from 'react-toastify'
 import AuthProvider from './Context/AuthProvider.jsx'
