@@ -27,7 +27,7 @@ const Register = () => {
 
   const onSubmit = async (data) => {
     const { displayName, email, password, photoURL } = data;
-    const finalPhotoURL = photoURL || "https://via.placeholder.com/88";
+    const finalPhotoURL = photoURL || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=88&h=88&fit=crop&crop=face";
 
     setIsLoading(true);
     setLoading(true);
@@ -367,7 +367,7 @@ export default Register;
 // const displayName = e.target.displayName?.value;
 // const email = e.target.email?.value;
 // const password = e.target.password?.value;
-// const photoURL = e.target.photoURL?.value || "https://via.placeholder.com/88";
+// const photoURL = e.target.photoURL?.value || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=88&h=88&fit=crop&crop=face";
 // console.log("registered",{displayName,email})
     
 // const re = /^(?=.{6,64}$)(?=.*[a-z])(?=.*[A-Z]).*$/;

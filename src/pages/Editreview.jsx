@@ -1,17 +1,74 @@
-import { h } from 'preact';
-import { useContext } from 'preact/hooks';
+import { useContext, useState, useEffect } from 'preact/hooks';
 import { AuthContext } from '../Context/AuthContext';
-import { useLoaderData, useNavigate } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import MyContainer from '../Components/MyContainer';
 import useAxiosSecure from '../Hooks/useAxiosSequire';
 
 const Editreview = () => {
-  const data = useLoaderData();
+  const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const axiosSecure = useAxiosSecure();
-  const review = data.result;
+  const [review, setReview] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchReview = async () => {
+      try {
+        setLoading(true);
+        const response = await axiosSecure.get(`/reviews/${id}`);
+        setReview(response.data?.result || response.data);
+      } catch (error) {
+        console.error('Error fetching review:', error);
+        setError('Failed to load review details');
+        toast.error('Failed to load review details');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchReview();
+    }
+  }, [id, axiosSecure]);
+
+  if (loading) {
+    return (
+      <div className="bg-background text-foreground min-h-screen py-8">
+        <MyContainer>
+          <div className="flex justify-center items-center h-64">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto mb-4"></div>
+              <h2 className="text-2xl font-semibold text-gray-600 dark:text-gray-400">Loading review...</h2>
+            </div>
+          </div>
+        </MyContainer>
+      </div>
+    );
+  }
+
+  if (error || !review) {
+    return (
+      <div className="bg-background text-foreground min-h-screen py-8">
+        <MyContainer>
+          <div className="flex justify-center items-center h-64">
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold text-red-600 mb-4">Review Not Found</h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">{error || 'The review you\'re trying to edit doesn\'t exist.'}</p>
+              <button 
+                className="btn btn-primary"
+                onClick={() => navigate('/MyReviews')}
+              >
+                Back to My Reviews
+              </button>
+            </div>
+          </div>
+        </MyContainer>
+      </div>
+    );
+  }
 
   const handleEditReview = async (e) => {
     e.preventDefault();

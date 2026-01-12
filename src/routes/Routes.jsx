@@ -50,9 +50,7 @@ export const router = createBrowserRouter([
    
            {
             path:"/reviewdetails/:id",
-            element:
-            <ReviewDetail />,
-            loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/reviews/${params.id}`)
+            element: <ReviewDetail />
            },
            {
             path:"/favoritedetails/:id",
@@ -75,7 +73,7 @@ export const router = createBrowserRouter([
           
             {
                 path:"/AllReview",
-                element:<AllReview />,     // loader:()=>fetch('http://localhost:3000/reviews')
+                element:<AllReview />,    
            
             },
            
@@ -114,8 +112,7 @@ export const router = createBrowserRouter([
                 ( <Privateroute>
                      <Editreview />
                 </Privateroute>
-               ),
-               loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/reviews/${params.id}`)
+               )
             },
                {
                 path:"/MyReviews",
