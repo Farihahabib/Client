@@ -2,7 +2,7 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-10 text-gray-800">
+    <div className="max-w-4xl mx-auto px-6 py-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg shadow-md">
       <h1 className="text-3xl font-bold text-center mb-6">
         🍔 Privacy Policy — FoodLovers Network
       </h1>

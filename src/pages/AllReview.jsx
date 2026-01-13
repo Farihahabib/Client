@@ -10,7 +10,7 @@ const AllReview = () => {
     queryKey: ["allreviews", search],
   queryFn: async () => {
   try {
-    const baseURL = import.meta.env.VITE_API_URL || "https://server-alpha-neon.vercel.app";
+    const baseURL =  "https://server-alpha-neon.vercel.app";
     
     if (!search.trim()) {
       const res = await axios.get(`${baseURL}/reviews`);

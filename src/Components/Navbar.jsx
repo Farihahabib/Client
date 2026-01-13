@@ -47,6 +47,9 @@ const Navbar = () => {
           <ul className="flex items-center gap-8 mr-3 py-2">
             <li><MyLink to={"/"}>Home</MyLink></li>
             <li><MyLink to={"/AllReview"}>All Reviews</MyLink></li>
+            <li><MyLink to={"/contact"}>Contact Us</MyLink></li>
+            <li><MyLink to={"/PrivacyPolicy"}>PrivacyPolicy</MyLink></li>
+                          
             {user && (<li><MyLink to={"/AddReview"}>Add Review</MyLink></li>)}
             {user && (<li><MyLink to={"/MyReviews"}>My Reviews</MyLink></li>)}
             {user && (<li><MyLink to={"/MyFavourite"}>My Favourites</MyLink></li>)}
